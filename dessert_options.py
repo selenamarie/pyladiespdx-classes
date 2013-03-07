@@ -31,8 +31,6 @@ version = '0.1'
 print "Welcome to the Portland PyLadies Dessert Suggester!"
 print
 
-# madlib template
-
 dessert_suggestions = {
 'Thursday':   "Where do we get alcoholic milkshakes? Lyzi says salt and straw - drinking vinegar",
 'Monica': "Sugar cube outside of Lardo, but WTF might be closing",
@@ -49,7 +47,7 @@ dessert_suggestions = {
 name = raw_input("Please enter the name of a PyLadies member: ")
 
 proper_name = name.title()
-if dessert_suggestions[proper_name]:
+if proper_name in dessert_suggestions:
     print proper_name + " says: ",
     print dessert_suggestions[proper_name]
 else:
