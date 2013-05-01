@@ -8,7 +8,9 @@ def transform_json(header, row):
     try:
         return simplejson.dumps(transforms)
     except:
+        print "ERROR"
         print transforms
+        raise
 
 with open('public_art.csv', 'rb') as csvfile:
     arte = csv.reader(csvfile, delimiter=',', quotechar='"')
