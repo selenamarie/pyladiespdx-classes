@@ -10,17 +10,20 @@ def transform_json(header, row):
     transforms = dict(zip(header, row))
     return simplejson.dumps(transforms)
 
+def descriptions(header, arte):
+    # Exercise: Transform description for loop into a list comprehension
+    descriptions = []
+    for row in arte:
+        descriptions.append(transform_dict(header, row)['description'])
+
+    for d in descriptions:
+        print d
+
 def titles(header, arte):
     # DONE Exercise: Return only titles
     titles = [ transform_dict(header, row)['title'] for row in arte]
     for t in titles:
         print t
-
-def descriptions(header, arte):
-    # DONE Exercise: Return only descriptions
-    descriptions = [ transform_dict(header, row)['description'] for row in arte]
-    for d in descriptions:
-        print d
 
 def artists(header, arte):
     # Exercise: Return only artists
@@ -31,6 +34,7 @@ def artists_by_medium(header, arte, medium_type):
     all_works = [ transform_dict(header, row) for row in arte ]
     regex = re.compile( '(' + medium_type + ')' )
     # Exercise: Return *unique* artists by medium type
+    # Exercise: Transform for loop into a list comprehension
     for work in all_works:
         match = re.search(regex, work['medium'])
         if match:
