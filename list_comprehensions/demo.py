@@ -26,18 +26,19 @@ def descriptions(header, arte):
 def artists(header, arte):
     # Exercise: Return only artists
     print "Not implemented"
-    pass
 
-def artists_by_medium(header, arte):
+def artists_by_medium(header, arte, medium_type):
     # Exercise: Return only artists
-    print "Not implemented"
-    pass
-
+    all_works = [ transform_dict(header, row) for row in arte ]
+    regex = re.compile( '(' + medium_type + ')' )
+    for work in all_works:
+        match = re.search(regex, work['medium'])
+        if match:
+            print work['artist']
 
 def locations(header, arte):
     # Exercise: Return only locations
     print "Not implemented"
-    pass
 
 def medium(header, arte):
     # Exercise: Return only mediums
@@ -92,6 +93,8 @@ def demo(args):
             artists(header, arte)
         elif args.medium:
             medium(header, arte)
+        elif args.artists_by_medium:
+            artists_by_medium(header, arte, args.artists_by_medium)
         elif args.medium_type:
             medium_by_type(header, arte, args.medium_type)
         elif args.asjson:
@@ -117,6 +120,7 @@ if __name__ == '__main__':
     argparser.add_argument("--medium", help="print mediums", action="store_true", default=False)
     argparser.add_argument("--asjson", help="return file contents at json", action="store_true", default=False)
     argparser.add_argument("--medium-type", help="print mediums of type TYPE", action="store", default=None)
+    argparser.add_argument("--artists-by-medium", help="print artists based on medium of type TYPE", action="store", default=None)
     argparser.set_defaults(**defaults)
     args = argparser.parse_args(remaining_argv)
 
