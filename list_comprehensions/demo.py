@@ -5,7 +5,10 @@ import json as simplejson
 
 def transform_json(header, row):
     transforms = dict(zip(header, row))
-    return simplejson.dumps(transforms)
+    try:
+        return simplejson.dumps(transforms)
+    except:
+        print transforms
 
 with open('public_art.csv', 'rb') as csvfile:
     arte = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -14,4 +17,4 @@ with open('public_art.csv', 'rb') as csvfile:
     print ",".join(header)
     alljson = [ transform_json(header, row) for row in arte ]
     for j in alljson:
-        print j
+        pass
