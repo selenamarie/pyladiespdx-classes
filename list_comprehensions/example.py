@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 mylist = [ 'one', 'two', 'three', 'four', 'five' ]
 for element in mylist:
