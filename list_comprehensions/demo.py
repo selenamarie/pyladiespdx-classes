@@ -29,6 +29,10 @@ def artists(header, arte):
     # Exercise: Return only artists
     print "Not implemented"
 
+def locations(header, arte):
+    # Exercise: Return only locations
+    print "Not implemented"
+
 def artists_by_medium(header, arte, medium_type):
     # DONE Exercise: Return artists by medium type, by regular expression
     all_works = [ transform_dict(header, row) for row in arte ]
@@ -39,10 +43,6 @@ def artists_by_medium(header, arte, medium_type):
         match = re.search(regex, work['medium'])
         if match:
             print work['artist']
-
-def locations(header, arte):
-    # Exercise: Return only locations
-    print "Not implemented"
 
 def medium(header, arte):
     # DONE Exercise: Return only mediums
@@ -59,10 +59,6 @@ def medium_by_type(header, arte, medium_type):
         match = re.search(regex, m)
         if match:
             print m
-
-def artists_by_firstname(header, arte, name):
-    # Exercise: search for artists by first name
-    print "not implemented"
 
 def artists_by_firstname(header, arte, name):
     # Exercise: search for artists by first name
@@ -135,3 +131,4 @@ if __name__ == '__main__':
     with open('public_art.csv', 'rb') as csvfile:
         arte = csv.reader(csvfile, delimiter=',', quotechar='"')
         demo(args, arte)
+
