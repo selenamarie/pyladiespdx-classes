@@ -73,7 +73,7 @@ def recid(header, arte):
     print "not implemented"
 
 def as_json(header, arte):
-    # Exercise: Return all as JSON
+    # DONE Exercise: Return all as JSON
     alljson = [ transform_json(header, row) for row in arte ]
     for j in alljson:
         print j
