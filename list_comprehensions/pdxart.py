@@ -22,7 +22,7 @@ def descriptions(header, arte):
         print d
 
 def titles(header, arte):
-    # DONE Exercise: Return only titles
+    # EXAMPLE: Return only titles
     titles = [ transform_dict(header, row)['title'] for row in arte]
     for t in titles:
         print t
@@ -36,7 +36,7 @@ def locations(header, arte):
     print "Not implemented"
 
 def artists_by_medium(header, arte, medium_type):
-    # DONE Exercise: Return artists by medium type, by regular expression
+    # EXAMPLE: Return artists by medium type, by regular expression
     all_works = [ transform_dict(header, row) for row in arte ]
     regex = re.compile( '(' + medium_type + ')' )
     # Exercise: Return *unique* artists by medium type
@@ -47,14 +47,14 @@ def artists_by_medium(header, arte, medium_type):
             print work['artist']
 
 def medium(header, arte):
-    # DONE Exercise: Return only mediums
+    # EXAMPLE: Return only mediums
     mediums = [ transform_dict(header, row)['medium'] for row in arte ]
     # Exercise: sort and only print unique mediums -- hint: See sorted and set
     for m in mediums:
         print m
 
 def medium_by_type(header, arte, medium_type):
-    # DONE Exercise: Return mediums of a certain type
+    # EXAMPLE: Return mediums of a certain type
     mediums = [ transform_dict(header, row)['medium'] for row in arte ]
     regex = re.compile( '(' + medium_type + ')' )
     for m in mediums:
@@ -75,7 +75,7 @@ def recid(header, arte):
     print "not implemented"
 
 def as_json(header, arte):
-    # DONE Exercise: Return all as JSON
+    # EXAMPLE: Return all as JSON
     alljson = [ transform_json(header, row) for row in arte ]
     for j in alljson:
         print j
