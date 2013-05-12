@@ -71,7 +71,6 @@ def main():
 class PdxArt(object):
 
     def __init__(self, filename='public_art.csv'):
-        # Meta exercise: Make opening a file by filename specified on the command-line
         self.csvfile = open(filename, 'rb')
         self.art = csv.reader(self.csvfile, delimiter=',', quotechar='"')
         self.header = self.art.next()
