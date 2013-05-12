@@ -22,6 +22,8 @@ def main():
         defaults = { "option":"default" }
 
     argparser = argparse.ArgumentParser(parents=[conf_parser])
+    argparser.add_argument("--file", help="Public Art source file",
+        action="store", default="public_art.csv")
     argparser.add_argument("--titles", help="print titles of public art",
         action="store_true", default=False)
     argparser.add_argument("--descriptions",
@@ -43,29 +45,34 @@ def main():
     argparser.set_defaults(**defaults)
     args = argparser.parse_args(remaining_argv)
 
-    pdxart = PdxArt()
+    pdxart = PdxArt(args.file)
+
+    result = []
     if args.titles:
-        pdxart.titles()
+        result = pdxart.titles()
     elif args.descriptions:
-        pdxart.descriptions()
+        result = pdxart.descriptions()
     elif args.artists:
-        pdxart.artists()
+        result = pdxart.artists()
     elif args.artists_by_medium:
-        pdxart.artists_by_medium(args.artists_by_medium)
+        result = pdxart.artists_by_medium(args.artists_by_medium)
     elif args.medium:
-        pdxart.medium()
+        result = pdxart.medium()
     elif args.medium_type:
-        pdxart.medium_by_type(args.medium_type)
+        result = pdxart.medium_by_type(args.medium_type)
     elif args.asjson:
-        pdxart.as_json()
+        result = pdxart.as_json()
     elif args.locations:
-        pdxart.locations()
+        result = pdxart.locations()
+
+    for r in result:
+        print r
 
 class PdxArt(object):
 
-    def __init__(self):
+    def __init__(self, filename='public_art.csv'):
         # Meta exercise: Make opening a file by filename specified on the command-line
-        self.csvfile = open('public_art.csv', 'rb')
+        self.csvfile = open(filename, 'rb')
         self.art = csv.reader(self.csvfile, delimiter=',', quotechar='"')
         self.header = self.art.next()
 
@@ -78,7 +85,7 @@ class PdxArt(object):
         # EXAMPLE: Return only titles
         titles = [ self.transform_dict(row)['title'] for row in art]
         for t in titles:
-            print t
+            yield t
 
     def descriptions(self):
         header = self.header
@@ -89,11 +96,11 @@ class PdxArt(object):
             descriptions.append(self.transform_dict(row)['description'])
 
         for d in descriptions:
-            print d
+            yield d
 
     def artists(self):
         # Exercise: Return only artists
-        print "Not implemented"
+        yield "Not implemented"
 
     def artists_by_medium(self, medium_type):
         header = self.header
@@ -106,7 +113,7 @@ class PdxArt(object):
         for work in all_works:
             match = re.search(regex, work['medium'])
             if match:
-                print work['artist']
+                yield work['artist']
 
     def medium(self):
         header = self.header
@@ -115,7 +122,7 @@ class PdxArt(object):
         mediums = [ self.transform_dict(row)['medium'] for row in art ]
         # Exercise: sort and only print unique mediums -- hint: See sorted and set
         for m in mediums:
-            print m
+            yield m
 
     def medium_by_type(self, medium_type):
         header = self.header
@@ -126,13 +133,13 @@ class PdxArt(object):
         for m in mediums:
             match = re.search(regex, m)
             if match:
-                print m
+                yield m
 
     def as_json(self):
         # EXAMPLE: Return all as JSON
         alljson = [ self.transform_json(row) for row in self.art ]
         for j in alljson:
-            print j
+            yield j
 
     def locations(self):
         # Return the lat/lng for each piece of art
@@ -140,24 +147,19 @@ class PdxArt(object):
             self.transform_dict(row)['lng'])
             for row in self.art ]
         for location in locations:
-            print location
+            yield location
 
     def artists_by_firstname(self, name):
         # Exercise: search for artists by first name
-        print "not implemented"
+        yield "not implemented"
 
     def thumbnail(self):
         # Exercise: download the thumbnails of all the works of art
-        print "not implemented"
+        yield "not implemented"
 
     def recid(self):
         # Exercise: strip the recid out of the detail_url
-        print "not implemented"
-
-    # Meta exercise: Only return unique rows for all functions
-    # Meta exercise: Allow values to be returned sorted by date modified (either most recent, or least recent)
-    # Meta exercise: Find other interesting attributes of the data and write your own function!
-    # Meta exercise: Make calling of functions more efficient than using the "if-then-else" loop
+        yield "not implemented"
 
     def transform_dict(self, row):
         header = self.header
