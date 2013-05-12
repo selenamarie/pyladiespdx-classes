@@ -82,7 +82,8 @@ class PdxArt(object):
         return self._header
 
     def random(self):
-        return self._header
+        # Implement a function to return a random entry from the art file
+        return True
 
     def titles(self):
         art = self.art
