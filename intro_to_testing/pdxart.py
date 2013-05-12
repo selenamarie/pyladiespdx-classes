@@ -79,15 +79,13 @@ class PdxArt(object):
         self.csvfile.close()
 
     def titles(self):
-        header = self.header
         art = self.art
         # EXAMPLE: Return only titles
-        titles = [ self.transform_dict(row)['title'] for row in art]
+        titles = [ self.transform_dict(row)['title'] for row in art ]
         for t in titles:
             yield t
 
     def descriptions(self):
-        header = self.header
         art = self.art
         # Exercise: Transform description for loop into a list comprehension
         descriptions = []
@@ -102,10 +100,8 @@ class PdxArt(object):
         yield "Not implemented"
 
     def artists_by_medium(self, medium_type):
-        header = self.header
-        art = self.art
         # EXAMPLE: Return artists by medium type, by regular expression
-        all_works = [ self.transform_dict(row) for row in art ]
+        all_works = [ self.transform_dict(row) for row in self.art ]
         regex = re.compile( '(' + medium_type + ')' )
         # Exercise: Return *unique* artists by medium type
         # Exercise: Transform for loop into a list comprehension
@@ -115,19 +111,15 @@ class PdxArt(object):
                 yield work['artist']
 
     def medium(self):
-        header = self.header
-        art = self.art
         # EXAMPLE: Return only mediums
-        mediums = [ self.transform_dict(row)['medium'] for row in art ]
+        mediums = [ self.transform_dict(row)['medium'] for row in self.art ]
         # Exercise: sort and only print unique mediums -- hint: See sorted and set
         for m in mediums:
             yield m
 
     def medium_by_type(self, medium_type):
-        header = self.header
-        art = self.art
         # EXAMPLE: Return mediums of a certain type
-        mediums = [ self.transform_dict(row)['medium'] for row in art ]
+        mediums = [ self.transform_dict(row)['medium'] for row in self.art ]
         regex = re.compile( '(' + medium_type + ')' )
         for m in mediums:
             match = re.search(regex, m)
