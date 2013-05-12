@@ -8,8 +8,10 @@ import re
 
 def main():
     # Meta exercise: Add a configuration file
-    conf_parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter, add_help=False)
-    conf_parser.add_argument("--config", dest="filename", help="Config File input", metavar="FILE", default=None)
+    conf_parser = argparse.ArgumentParser(description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter, add_help=False)
+    conf_parser.add_argument("--config", dest="filename",
+        help="Config File input", metavar="FILE", default=None)
     args, remaining_argv = conf_parser.parse_known_args()
 
     if args.filename:
@@ -36,6 +38,8 @@ def main():
     argparser.add_argument("--artists-by-medium",
         help="print artists based on medium of type TYPE",
         action="store", default=None)
+    argparser.add_argument("--locations", help="print locations",
+        action="store_true", default=False)
     argparser.set_defaults(**defaults)
     args = argparser.parse_args(remaining_argv)
 
@@ -54,6 +58,8 @@ def main():
         pdxart.medium_by_type(args.medium_type)
     elif args.asjson:
         pdxart.as_json()
+    elif args.locations:
+        pdxart.locations()
 
 class PdxArt(object):
 
@@ -123,16 +129,18 @@ class PdxArt(object):
                 print m
 
     def as_json(self):
-        header = self.header
-        art = self.art
         # EXAMPLE: Return all as JSON
-        alljson = [ self.transform_json(row) for row in art ]
+        alljson = [ self.transform_json(row) for row in self.art ]
         for j in alljson:
             print j
 
     def locations(self):
-        # Exercise: Return only locations
-        print "Not implemented"
+        # Return the lat/lng for each piece of art
+        locations = [ (self.transform_dict(row)['lat'],
+            self.transform_dict(row)['lng'])
+            for row in self.art ]
+        for location in locations:
+            print location
 
     def artists_by_firstname(self, name):
         # Exercise: search for artists by first name
