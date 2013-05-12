@@ -73,10 +73,16 @@ class PdxArt(object):
     def __init__(self, filename='public_art.csv'):
         self.csvfile = open(filename, 'rb')
         self.art = csv.reader(self.csvfile, delimiter=',', quotechar='"')
-        self.header = self.art.next()
+        self._header = self.art.next()
 
     def __del__(self):
         self.csvfile.close()
+
+    def header(self):
+        return self._header
+
+    def random(self):
+        return self._header
 
     def titles(self):
         art = self.art
@@ -153,11 +159,11 @@ class PdxArt(object):
         yield "not implemented"
 
     def transform_dict(self, row):
-        header = self.header
+        header = self._header
         return dict(zip(header, row))
 
     def transform_json(self, row):
-        header = self.header
+        header = self._header
         transforms = dict(zip(header, row))
         return simplejson.dumps(transforms)
 
