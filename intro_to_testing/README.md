@@ -8,18 +8,18 @@ Testing
 
 Getting started:
 
-$ mkdir -p ~/venv ; virtualenv ~/venv/pdxart
+    $ mkdir -p ~/venv ; virtualenv ~/venv/pdxart
     New python executable in /home/selena/venv/pdxart/bin/python
     Installing distribute..............................................................................................................................................................................................done.
     Installing pip...............done.
-$ source ~/venv/pdxart/bin/activate
-$ pip install -r requirements.txt
-$ cat >> ~/.noserc
-[nosetests]
-verbosity=3
-^D
-$ mkdir -p tests
-$ nosetests
+    $ source ~/venv/pdxart/bin/activate
+    $ pip install -r requirements.txt
+    $ cat >> ~/.noserc
+    [nosetests]
+    verbosity=3
+    ^D
+    $ mkdir -p tests
+    $ nosetests
 
     nose.selector: INFO: /home/selena/repos/pyladies-stuff/projects/intro_to_testing/example.py is executable; skipped
     nose.selector: INFO: /home/selena/repos/pyladies-stuff/projects/intro_to_testing/pdxart.py is executable; skipped
