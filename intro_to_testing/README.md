@@ -72,11 +72,10 @@ Methods you can use include:
 * `assert_is_not(a, b) # 2.7`
 * `assert_is_none(x) # 2.7`
 * `assert_is_not_none(x) # 2.7`
-* `assert_is_not_none(x) # 2.7`
 * `assert_is_in(a, b) # 2.7`
 * `assert_is_not_in(a, b) # 2.7`
 * `assert_is_instance(a, b) # 2.7`
-* `assert_is_not)instance(a, b) # 2.7`
+* `assert_is_not_instance(a, b) # 2.7`
 
 
 We'll also use SkipTest (from `nose.modules.skip`).

@@ -3,6 +3,11 @@ from nose.plugins.skip import SkipTest
 from sample_class import SampleClass
 
 def test_sample_class():
+    """ Verify we we can create a SampleClass """
+    s = SampleClass()
+    assert_is_not_none(s)
+
+def test_sample_class_mylist():
     """ Verify we get what we expect back from a sample class """
     expected_list = [ 'one', 'two', 'three', 'four', 'five' ]
     s = SampleClass()
