@@ -1,6 +1,6 @@
 from nose.tools import *
 from nose.plugins.skip import SkipTest
-from example import SampleClass
+from sample_class import SampleClass
 
 def test_sample_class():
     """ Verify we get what we expect back from a sample class """
