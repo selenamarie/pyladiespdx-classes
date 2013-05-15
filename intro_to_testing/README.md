@@ -35,4 +35,8 @@ Writing your first test
 The tool 'nosetests' will look into the directory called 'tests' and try to run
 any tests in that directory
 
+To see the current state of our test suite, run `nosetests`.
 
+Have a look at `some_class.py` and see the class that's defined in there.
+
+Have a look at `tests/some_class_test.py`, which has one test defined, and several other tests marked as "skipped".
