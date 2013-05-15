@@ -1,23 +1,22 @@
 from nose.tools import *
+from nose.plugins.skip import SkipTest
 from pdxart import PdxArt
-import unittest
 
 def test_pdxart():
     """ Test loading PdxArt class without arguments """
     art = PdxArt()
 
-@unittest.skip("skipping header test")
 def test_header():
+    raise SkipTest
     art = PdxArt()
     header = art.header()
 
     expected_header = [ 'this', 'that' ]
     assert_equal(expected_header, header)
 
-
-@unittest.skip("skipping location test")
 def test_locations():
     """ Test that latitude/longitude are valid """
+    raise SkipTest
     art = PdxArt()
     for location in art.locations():
         yield check_location, location
