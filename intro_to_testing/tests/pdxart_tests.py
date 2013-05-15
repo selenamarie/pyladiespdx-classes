@@ -5,6 +5,7 @@ from pdxart import PdxArt
 def test_pdxart():
     """ Test loading PdxArt class without arguments """
     art = PdxArt()
+    assert_is_not_none(art)
 
 def test_header():
     """ Test PdxArt header """
