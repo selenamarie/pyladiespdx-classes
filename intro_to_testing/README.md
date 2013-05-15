@@ -3,10 +3,10 @@ Public Art in Portland
 
 This is a script to look at data from: http://www.civicapps.org/datasets/public-art
 
-Testing
+Setup
 =========
 
-Getting started:
+Run these commands to get started:
 
     $ mkdir -p ~/venv ; virtualenv ~/venv/pdxart
     New python executable in /home/selena/venv/pdxart/bin/python
@@ -34,7 +34,5 @@ Writing your first test
 
 The tool 'nosetests' will look into the directory called 'tests' and try to run
 any tests in that directory
-
-
 
 
