@@ -15,13 +15,38 @@ Some types of testing:
 * Integration testing - test interfaces between components
 * System testing - test a complete system to verify it meets requirements
 
+Why is testing important?
+-------------------------
+
+We write tests to:
+
+* To brainstorm features
+* Catch mistakes
+* Catch changes in: interfaces, APIs, our coworkers code, our own code
+* Find edge cases
+* Demonstrate that we fulfulled the terms of a contract
+* For fun!
+
+Some people swear by Test-driven development (TDD).
+
+Some other terms you might hear: 
+
+* Code Coverage: https://en.wikipedia.org/wiki/Code_coverage
+* QA: Quality assurance
+* Monkey testing: testing stuff on the fly!
+* Performance testing: aka load testing
+* A glossary: http://www.aptest.com/glossary.html
+
+
+Testing in Python
+-----------------
+
 Python has a built-in class for testing: `unittest`
 
 There's also another library and executable called nose. Nose is often also
 used with Django.
 
 We're going to use Nose.
-
 
 Setup
 =====
