@@ -9,11 +9,13 @@ Testing is about verifying functionality:
 * Can these two objects talk to each other?
 * Can a system run properly when all the parts are put together?
 
-Unit testing - test each component individually
-Integration testing - test interfaces between components
-System testing - test a complete system to verify it meets requirements
+Some types of testing:
 
-Python has a built-in class for testing: unittest
+* Unit testing - test each component individually
+* Integration testing - test interfaces between components
+* System testing - test a complete system to verify it meets requirements
+
+Python has a built-in class for testing: `unittest`
 
 There's also another library and executable called nose. Nose is often also
 used with Django.
@@ -22,7 +24,7 @@ We're going to use Nose.
 
 
 Setup
-=========
+=====
 
 Run these commands to get started:
 
