@@ -9,6 +9,7 @@ Setup
 -----
 
 Get the code: 
+::
     git clone https://github.com/django/django.git
     cd django/tests
     PYTHONPATH=..:$PYTHONPATH python ./runtests.py --settings=test_sqlite
