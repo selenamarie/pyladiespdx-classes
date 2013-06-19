@@ -1,6 +1,21 @@
 Django
 ======
 
+The goal of this page is to provide a jumping off point for
+folks interested in contributing their first patch to an open
+source project!
+
+I picked Django because of how friendly their developer community
+is, how many open bugs they had that were new-contributor
+friendly, and because the devs were very responsive when I asked
+for some help.
+
+Two core devs have agreed to review your patches tomorrow,
+6/20/2013! :)
+
+
+Here's how to get started:
+
 Contributing page: http://code.djangoproject.com/
 https://docs.djangoproject.com/en/1.5/internals/contributing/
 
@@ -14,7 +29,6 @@ Get the code:
     cd django/tests
     PYTHONPATH=..:$PYTHONPATH python ./runtests.py --settings=test_sqlite
 ```
-
 
 Process
 -------
@@ -40,36 +54,6 @@ Recommended:
 * https://code.djangoproject.com/ticket/19830 -- use the admin's login form for the staff_required decorator
 * https://code.djangoproject.com/ticket/20218 -- object-level permission checking in default backend
 * https://code.djangoproject.com/ticket/18355 -- an OrderingViewMixin
-
-
-
-Flask
-=====
-
-Contributing page: http://www.pocoo.org/contributing/
-
-Style Guide: http://www.pocoo.org/internal/styleguide/#styleguide
-
-Get the code:
-
-    git clone git@github.com:mitsuhiko/flask.git
-
-Needs: jinja and werkzeug
-
-virtualenv ~/venv/flask
-source ~/venv/flask/bin/activate
-pip install jinja2 werkzeug itsdangerous
-
-python setup.py build
-python run-tests.py
-
-
-Werkzeug
-========
-
-Get the code:
-
-    git clone https://github.com/mitsuhiko/werkzeug
 
 
 
