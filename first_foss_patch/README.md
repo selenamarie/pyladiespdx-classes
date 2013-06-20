@@ -46,11 +46,11 @@ Tickets
 -------
 
 Recommended:
-TAKEN * Redirect logged in user: https://code.djangoproject.com/ticket/12233
+* TAKEN  Redirect logged in user: https://code.djangoproject.com/ticket/12233
 * Lacking Documentation on Custom Related Fields Pre-Save Override: https://code.djangoproject.com/ticket/19427
 * add login failure events to django.security logger: https://code.djangoproject.com/ticket/20495
-TAKEN * https://code.djangoproject.com/ticket/3111 -- as_tr()/as_li() methods for fields
-TAKEN * https://code.djangoproject.com/ticket/19560 -- more helpful error when dangerously mixing naive and tz-aware datetimes
+* TAKEN  https://code.djangoproject.com/ticket/3111 -- as_tr()/as_li() methods for fields
+* TAKEN  https://code.djangoproject.com/ticket/19560 -- more helpful error when dangerously mixing naive and tz-aware datetimes
 * https://code.djangoproject.com/ticket/19830 -- use the admin's login form for the staff_required decorator
 * https://code.djangoproject.com/ticket/20218 -- object-level permission checking in default backend
 * https://code.djangoproject.com/ticket/18355 -- an OrderingViewMixin
