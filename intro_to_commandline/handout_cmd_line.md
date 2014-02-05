@@ -1,13 +1,9 @@
-== Pre assessment!
-Please take a few minutes to fill out this pre-assessment:
-https://docs.google.com/forms/d/1iCzW_wQFAihcBFpcNGWdithgB4SSXZb9qS4cPKjxGnk/viewform
-or if you're typing this in: http://bit.ly/Ya0mBE
-
-== Prep for class
+Prep for class
+--------------
 
 There are a few things you can do before class if you want to get a head start. You don't have to do any of this to participate, and you'll be working in pairs.
 
-If you have never been to a PyLadies meetup before: 
+If you have never been to a PyLadies meetup before:
 
 Totally not a problem! There are a few things you'll need on your laptop to play along:
 
@@ -33,7 +29,10 @@ https://github.com/pyladiespdx/TwitterAPI
 Here are the details that you can use for now to put into your 'config.py':
 
     import twitter
-    api = twitter.Api(consumer_key='qhN19WJIpzkEJiFsOccFdA', consumer_secret='yfRLLonNu9i1o4sA9rzH6JEKOgNcyaMpq2oynt2A6io', access_token_key='305854397-8x1GT2pk6Wakg5LoHBVkY6SuLgKS3dmnsUEtYWAn', access_token_secret='M2nGNxD01mYx3ebN04pvK6F0wTbfdmLZjL3e42xE4')
+    api = twitter.Api(consumer_key='qhN19WJIpzkEJiFsOccFdA',
+        consumer_secret='yfRLLonNu9i1o4sA9rzH6JEKOgNcyaMpq2oynt2A6io',
+        access_token_key='305854397-8x1GT2pk6Wakg5LoHBVkY6SuLgKS3dmnsUEtYWAn',
+        access_token_secret='M2nGNxD01mYx3ebN04pvK6F0wTbfdmLZjL3e42xE4')
 
 After you read the instructions on github that should make a bit more sense. :) If not, just ask when you get to class.
 
@@ -49,9 +48,9 @@ You rock. Now, take a minute and set up your Twitter API credentials:
 Thanks for reading, and see you tonight!
 
 
-== Post assessment
+Post assessment
+----------------
 
 Let us know how we did:
-https://docs.google.com/forms/d/1SPz52DVRswh__bRnnKLSsX2c59xyHqchQVKk2xg8ido/viewform
-or if you're typing this in: http://bit.ly/Zrweq7
-
+https://docs.google.com/forms/d/1kLXNNZ7bJ9_cej9-1exKi8nIDcd66sEgdlDZFHC-mHA/viewform
+or if you're typing this in: http://bit.ly/K4QYOz
