@@ -31,10 +31,10 @@ Pre-requisites
 
 Task breakdown
 --------------
-Use git to create a repository
-Use git to add a file to a repository
-Use git to create a branch
-Use git to clone a repository
-Use git to commit a change
-Use git to push a local commit to another git repository
-Open a pull request on the Github website
+* Use git to create a repository
+* Use git to add a file to a repository
+* Use git to create a branch
+* Use git to clone a repository
+* Use git to commit a change
+* Use git to push a local commit to another git repository
+* Open a pull request on the Github website
